@@ -2,19 +2,106 @@
   box-sizing: border-box;
 }
 body{
+  display: flex;
+  flex-direction: column;
   font-family: Inter, sans-serif;
+  line-height: 1.5rem;
 }
 h1,h2,h3,h4{
   font-family: 'Montserrat', sans-serif;
 }
 
+img{width: 100%;
+  height:auto;
+  display: block;}
 
+  main{
+    padding: 0 1rem;
+    max-width: 65rem;
+    align-self: center;
+  }
+
+  article{
+    margin-bottom: 6rem;
+  }
+
+  a{
+    color:blue;
+    text-decoration: none;
+    transition: text-decoration 300ms ease;
+  }
+a:hover{
+  text-decoration: underline;
+
+}
+  header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+    display:flex;
+    justify-content: space-evenly;
+  }
+header a {
+display: inline-block;
+padding: 2rem;
+}
+
+.hero{
+  position: relative;
+}
+.hero .text-content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  inset: 0 0 0 0;
+  padding: 0 1rem;
+
+
+}
+.hero h1{
+  margin:0;
+  color: white;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+.hero p{
+  font-size: 2rem;
+  color: white;
+
+}
+
+.button{
+display: inline-block;
+padding: 0.5rem 1rem;
+background-color: #ccc;
+color:black;
+border-radius: 3px;
+text-decoration: none;
+transition: box-shadow 400ms ease;
+}
+
+.panel{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.panel .image-wrapper{ order: -1;}
+
+.button:hover{
+color: black;
+box-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+text-decoration: none;
+}
 
 
 .cards{
   display: flex; 
   flex-direction: column;
   gap: 1rem;
+  padding: 0 1rem;
 }
 .cards img{
   width:100%; height:auto;
@@ -40,7 +127,26 @@ h1,h2,h3,h4{
   flex: 1 1 40%;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 400px) {.panel{
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.panel .image-wrapper{
+  flex: 1 1 40%;
+  order:0
+}
+.panel .left{
+  order: -1}
+
+.panel h2{
+  margin-top: 0;
+}
+
+.panel .text-content{
+flex: 1 1 60%
+
+}
   .cards { 
     flex-direction: row;
     flex-wrap: wrap-reverse;
