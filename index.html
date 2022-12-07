@@ -23,7 +23,28 @@
 <link rel="stylesheet" href="styles/main.css">
 
 </head>
-
+<header>
+  <div class="menu-icon">
+    <svg viewbox="0 0 60 60">
+      <line x1="5%" y1="50%" x2="95%" y2="50%" />
+      <line x1="5%" y1="50%" x2="95%" y2="50%" />
+    </svg>
+  </div>
+  <nav>
+    <ul>
+      <li><a>Main</a></li>
+      <li><a>About</a></li>
+      <li><a>Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<header>
+  <nav class="close">
+    <div class="menu-icon">
+      <svg viewbox="0 0 60 60" width="40px" height="40px">...</svg>
+    </div>
+  </nav>
+</header>
 <body>
   <div class="hero">
 <picture>
@@ -106,5 +127,10 @@
     <p>Ocean animals are in danger. They face serious threats to their health and ocean habitat such as pollution, ship strikes and entanglement.</p>
  </aside>
 <footer><p>Continue exploring this website for additional information. </p></footer>
+<script>
+  document.querySelector(".menu-icon").addEventListener("click", function () {
+    this.parentElement.classList.toggle("close");
+  });
+</script>
 </body>
-</html>
+  </html>
